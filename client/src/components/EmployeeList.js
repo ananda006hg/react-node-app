@@ -162,7 +162,7 @@ const EmployeeList = () => {
           />
         </Col>
         <Col md={3} className="text-right">
-          <Button variant="primary" onClick={handleShow}>
+          <Button variant="primary" onClick={handleShow} id="add-employee-button" aria-label="Add New Employee">
             <FaPlus /> Add New Employee
           </Button>
         </Col>
@@ -195,6 +195,7 @@ const EmployeeList = () => {
                     size="sm" 
                     className="mr-2"
                     onClick={() => handleEdit(employee)}
+                    aria-label={`Edit ${employee.name}`}
                   >
                     <FaEdit />
                   </Button>
@@ -203,6 +204,7 @@ const EmployeeList = () => {
                     variant="danger" 
                     size="sm"
                     onClick={() => handleDelete(employee._id)}
+                    aria-label={`Delete ${employee.name}`}
                   >
                     <FaTrash />
                   </Button>
@@ -225,8 +227,9 @@ const EmployeeList = () => {
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
-              <Form.Label>Name *</Form.Label>
+              <Form.Label htmlFor="employee-name">Name *</Form.Label>
               <Form.Control 
+                id="employee-name"
                 type="text" 
                 name="name"
                 value={currentEmployee.name} 
@@ -236,8 +239,9 @@ const EmployeeList = () => {
             </Form.Group>
             
             <Form.Group className="mb-3">
-              <Form.Label>Email *</Form.Label>
+              <Form.Label htmlFor="employee-email">Email *</Form.Label>
               <Form.Control 
+                id="employee-email"
                 type="email" 
                 name="email"
                 value={currentEmployee.email} 
@@ -247,8 +251,9 @@ const EmployeeList = () => {
             </Form.Group>
             
             <Form.Group className="mb-3">
-              <Form.Label>Position *</Form.Label>
+              <Form.Label htmlFor="employee-position">Position *</Form.Label>
               <Form.Control 
+                id="employee-position"
                 type="text" 
                 name="position"
                 value={currentEmployee.position} 
@@ -258,8 +263,9 @@ const EmployeeList = () => {
             </Form.Group>
             
             <Form.Group className="mb-3">
-              <Form.Label>Phone</Form.Label>
+              <Form.Label htmlFor="employee-phone">Phone</Form.Label>
               <Form.Control 
+                id="employee-phone"
                 type="text" 
                 name="phone"
                 value={currentEmployee.phone} 
@@ -268,8 +274,9 @@ const EmployeeList = () => {
             </Form.Group>
             
             <Form.Group className="mb-3">
-              <Form.Label>Department</Form.Label>
+              <Form.Label htmlFor="employee-department">Department</Form.Label>
               <Form.Control 
+                id="employee-department"
                 type="text" 
                 name="department"
                 value={currentEmployee.department} 
